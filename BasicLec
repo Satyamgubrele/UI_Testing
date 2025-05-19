@@ -1,0 +1,83 @@
+//	Logo verification
+//		isDisplayed gives the boolean type
+	
+//	
+//		WebElement logoVar=d.findElement(By.className("logo"));
+//		boolean verifyLogo=logoVar.isDisplayed();
+//		System.out.println(verifyLogo);
+		
+	//	boolean status=d.findElement(By.className("logo")).isDisplayed();
+		
+//	linkText and PartialLinkText
+		
+//		WebElement linkT=d.findElement(By.linkText("Radiant Tee"));
+//		linkT.click();
+		
+//TagName and className -- to select group of web elements
+//	if we use tag name example img
+
+
+
+//CSS selectors
+//Tag #id
+//Tag.classname
+//tag[attribute="value"]
+//tag.classname[att="value"]
+
+//		Relative xpath-->
+//		
+//        xpath with single attribute -- //tagname[@attribute='value']
+//		xapth with  multi attribute->  //tagname[@attribute='value'][@attribute='value']
+//		xpath with OR AND oprator --> // tagname or *[@attribute='value' or @attribute='valuee'] 
+//		xpath with inner text-->      //tag[text()='welcom']
+//		xapth with contains-->    //tag[contains(@attribute,'Sea')] -- partial values
+//		xapth with starts-with-->    //tag[starts-with(@attribute,'Sea')] -- partial values
+//		
+		
+//		
+//		Handling the xpath (Dynamic attribute)-->
+//		
+//		xpath with OR AND oprator --> // tagname or *[@attribute='value' or @attribute='valuee'] 
+//
+//
+//chained xpath-->
+//
+//		//div[@id='logo']/a/img
+
+	//d.close()	;
+	}
+	
+	
+	
+	//	    1.Get methods
+//		2.conditional methods
+//		3.browser methods
+//		4.navigational methods
+//		5.wait methods
+		
+		
+//getMethods-->
+//		 1.Get methods-->
+//			
+//			get(url)- open the url on the browser
+//			getTitle()-->
+//			getCurrentUrl()-->return url of the page
+//			getPageSource()--> return sourcecode of the page
+//			String -->getWindowHandle()-- return the ID of the single browser window
+//		return type set-->	getWindowHandles()--> return id's of the multiple browser windows
+//		
+		
+//browser methods.
+		
+//		1.driver.close()==>current window.
+//		2.driver.quit()==>all windows
+
+//conditional methods
+	//return boolean	
+//	isDisplayed()
+//	isEnable()
+//	isSelected() --use for radio button and checkboxes
+		
+		
+		
+		
