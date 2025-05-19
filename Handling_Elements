@@ -1,0 +1,107 @@
+
+
+Handle diffrent types of elements:
+
+
+Handle diffrent types of elements:
+
+
+	
+	1. Text Input Fields (<input type="text">)
+		Use case: Filling out text fields (e.g., username, email, etc.)
+
+		Action: sendKeys()
+
+				WebElement username = driver.findElement(By.id("username"));
+				username.sendKeys("myUsername");
+	2. Buttons (<button>, <input type="button">)
+				Use case: Triggering actions like submit, search, etc.
+
+		Action: click()
+
+
+				WebElement submitButton = driver.findElement(By.id("submitButton"));
+				submitButton.click();
+	
+	3. Links (<a>)
+		Use case: Clicking on links to navigate to other pages
+
+		Action: click()
+
+
+
+					WebElement link = driver.findElement(By.linkText("Click here"));
+					link.click();
+					
+	4. Checkboxes (<input type="checkbox">)
+		Use case: Selecting or deselecting checkboxes
+
+		Action: isSelected(), click()
+
+
+		WebElement checkbox = driver.findElement(By.id("acceptTerms"));
+		if (!checkbox.isSelected()) {
+			checkbox.click();  // Check the checkbox
+		}
+		
+	5. Radio Buttons (<input type="radio">)
+		Use case: Selecting one option from a group
+
+			Action: click()
+
+			WebElement radioButton = driver.findElement(By.id("genderMale"));
+			radioButton.click();  // Select the radio button
+	6. Dropdowns (<select>, <option>)
+		Use case: Selecting options from a dropdown list
+
+			Action: Select class, selectByVisibleText(), selectByIndex()
+
+			Select select = new Select(driver.findElement(By.id("dropdown")));
+			select.selectByVisibleText("Option 1");
+			
+	7. Alerts (JavaScript popups)
+Use case: Handling pop-up alerts (alert, confirmation, prompt)
+
+Action: switchTo().alert(), accept(), dismiss(), sendKeys()
+
+
+		Alert alert = driver.switchTo().alert();
+		alert.accept();  // Click OK
+		// alert.dismiss();  // Click Cancel
+		// alert.sendKeys("Text for prompt");  // Input to prompt
+	
+	8. Dynamic Elements (Elements that load asynchronously)
+		Use case: Waiting for elements to appear dynamically
+
+		Action: WebDriverWait, ExpectedConditions
+
+
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("dynamicElement")));
+		element.click();
+	9. File Upload Fields (<input type="file">)
+			Use case: Uploading files through file input
+
+			Action: sendKeys() (provide file path)
+
+
+			WebElement fileInput = driver.findElement(By.id("fileUpload"));
+			fileInput.sendKeys("C:/path/to/file.txt");
+			
+			
+	10. Hidden Elements (e.g., display: none or visibility: hidden)
+		Use case: Interacting with elements that are hidden (e.g., modal dialogs, popups)
+
+		Action: Change visibility via JavaScript
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.visibility='visible';", hiddenElement);
+		Common Action Methods for Elements:
+
+		Action	Method Used	Description
+		Click on an element	element.click()	Click the element (button, link, checkbox, etc.)
+		Send text to input	element.sendKeys("text")	Input text into a field (text, password, etc.)
+		Check if selected	element.isSelected()	Check if checkbox/radio button is selected
+		Get text	element.getText()	Retrieve the visible text from an element
+		Get element's attribute	element.getAttribute()	Retrieve specific attribute (e.g., value, href)
+		Wait for element	wait.until()	Wait for a condition to be true (e.g., visibility)
